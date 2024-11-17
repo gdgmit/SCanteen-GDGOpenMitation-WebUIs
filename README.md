@@ -1,1 +1,0 @@
-# SCanteen-GDGOpenMitation-WebUIs
