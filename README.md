@@ -1,4 +1,4 @@
-# Installation Guidelines
+# Project Setup
 ## 1. Clone the repository
 git clone https://github.com/gdgmit/SCanteen-GDGOpenMitation-WebUIs.git
 ## 2. Pull the latest changes from the main branch
