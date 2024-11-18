@@ -2,6 +2,8 @@
 ## 1. Clone the repository
 git clone https://github.com/gdgmit/SCanteen-GDGOpenMitation-WebUIs.git
 ## 2. Pull the latest changes from the main branch
+Navigate to the cloned folder,
+
 git checkout main
 
 git pull origin main
@@ -9,6 +11,8 @@ git pull origin main
 npm install
 ## 4. Run the project
 npm run dev
+
+Now you can see 3 buttons for each user in the homepage. Write your code in the corresponding user's folder that is, components/[username]
 
 # Task Submission
 After the completion of your tasks,
