@@ -12,7 +12,7 @@ const CashierOrders = () => {
       try {
         const response = await fetch("/data/scanteen_orders_sampledata.json");
         const data = await response.json();
-        setOrders(data.filter((order) => order.payment_mode === 'cash'));
+        setOrders(data.filter((order) => order.payment_mode === 'cash' && order.payment_status === 'not paid' && order.isScanned === false));
       } catch (error) {
         console.error("Error fetching orders:", error);
       }
@@ -29,7 +29,7 @@ const CashierOrders = () => {
   };
 
   return (
-    <div className="p-4 w-full mx-auto bg-[#D9D9D96B]">
+    <div className="p-4 w-full mx-auto bg-[#D9D9D96B] min-h-[100vh]">
       <h1 className="text-2xl font-bold mb-4 text-center">Current Orders</h1>
 
       {/* Orders List */}
