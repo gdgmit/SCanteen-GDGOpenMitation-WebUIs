@@ -6,7 +6,7 @@ dayjs.extend(customParseFormat);
 
 const SupplierOrders = () => {
   const [orders, setOrders] = useState([]);
-  const [activeTab, setActiveTab] = useState("paid");
+  const [activeTab, setActiveTab] = useState("pending_scans");
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -34,33 +34,33 @@ const SupplierOrders = () => {
       <div className="flex justify-center border-b mb-4 bg-[#D9D9D99E] w-full">
         <button
           className={`px-4 py-2 transition-all  h-16 flex-1 ${
-            activeTab === "not_paid"
+            activeTab === "scanned_orders"
               ? "border-b-2 border-r-2 border-[#5777C7] font-bold bg-[#d0d0d09e]"
               : "text-gray-950"
           }`}
-          onClick={() => setActiveTab("not_paid")}
+          onClick={() => setActiveTab("scanned_orders")}
         >
           Scanned Orders
         </button>
         <button
           className={`px-4 py-2 transition-all flex-1 ${
-            activeTab === "paid"
+            activeTab === "pending_scans"
               ? "border-b-2 border-l-2 border-[#5777C7] font-bold bg-[#d0d0d09e]"
               : "text-gray-950"
           }`}
-          onClick={() => setActiveTab("paid")}
+          onClick={() => setActiveTab("pending_scans")}
         >
           Pending Scans
         </button>
       </div>
 
       {/* Orders List */}
-      <div className="transition-all h-full pb-4">
+      <div className="transition-all h-full pb-4 min-h-[100vh]">
         {orders
           .filter((order) =>
-            activeTab === "paid"
-              ? order.payment_status === "paid"
-              : order.payment_status === "not paid"
+            activeTab === "pending_scans"
+              ? order.payment_status === "paid" && order.order_status === "ordered" && order.isScanned === false
+              : order.payment_status === "paid" && order.order_status === "ordered" && order.isScanned === true
           )
           .map((order) => (
             <div
@@ -85,12 +85,16 @@ const SupplierOrders = () => {
               <p className="text-sm text-black py-3 sm:py-0 text-end">
                  {dayjs(order.order_date, "DD-MM-YYYY hh.mm:ss A").format("DD/MM hh.mm A")}
               </p>
-              <button
-                className="bg-[#5777C7] text-white px-4 py-2 rounded-full hover:bg-[#2250c7] transition"
-                onClick={() => handlesetDelivered(order.order_ID)}
-                >
-                  Set Delivered
-                </button>
+              {
+                activeTab === "scanned_orders" && (
+                  <button
+                    className="bg-[#5777C7] text-white px-4 py-2 rounded-full hover:bg-[#2250c7] transition"
+                    onClick={() => handlesetDelivered(order.order_ID)}
+                  >
+                    Set Delivered
+                  </button>
+                )
+              }
               </div>
             </div>
           ))}
@@ -100,3 +104,7 @@ const SupplierOrders = () => {
 };
 
 export default SupplierOrders;
+
+// scanned orders => order.payment_status === "not paid" && order.order_status === "ordered" && order.isScanned === true
+// pending scans  => order.payment_status === "paid" && order.order_staus === "ordered" && order.isScanned === false
+// cashier orders => order.payment_mode === 'cash' && order.payment_status === 'not paid' && order.isScanned === true
