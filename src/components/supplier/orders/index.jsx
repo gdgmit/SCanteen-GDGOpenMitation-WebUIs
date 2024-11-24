@@ -95,6 +95,8 @@ const SupplierOrders = () => {
                   </button>
                 )
               }
+              {/* to move button center */}
+              <div></div> 
               </div>
             </div>
           ))}

@@ -63,6 +63,8 @@ const CashierOrders = () => {
               >
                 Set Paid
               </button>
+              {/* to move button center */}
+              <div></div> 
             </div>
           </div>
         ))}
