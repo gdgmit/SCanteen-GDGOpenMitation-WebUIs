@@ -49,7 +49,7 @@ const CashierOrders = () => {
                   {item.name} x <span className="text-[#5777C7] "> {item.quantity} </span>
                 </p>
               ))}
-              <p className="font-bold mt-2">Total: ₹{order.total_amount}</p>
+              <p className="font-bold mt-2">Total: <span className="text-[#5777C7] ">₹{order.total_amount}</span></p>
             </div>
 
             {/* Right Container */}
