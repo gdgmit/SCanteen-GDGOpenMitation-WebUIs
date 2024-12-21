@@ -1,7 +1,9 @@
+import { MenuAdder } from "./menuAdder";
+
 function CashierUI() {
     return (
       <>
-      Cashier UI here
+      <MenuAdder />
       </>
     );
   }

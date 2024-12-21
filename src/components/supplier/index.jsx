@@ -1,7 +1,9 @@
+import { MenuAdder } from "../cashier/menuAdder";
+
 function SupplierUI() {
     return (
       <>
-      Supplier UI here
+      <MenuAdder />
       </>
     );
   }

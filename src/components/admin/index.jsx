@@ -1,7 +1,9 @@
+import { ProvisionsPage } from "./ProvisionPage";
+
 function AdminUI() {
     return (
       <>
-      Admin UI here by task - 4
+      <ProvisionsPage />
       </>
     );
   }
