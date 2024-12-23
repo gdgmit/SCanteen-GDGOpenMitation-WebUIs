@@ -53,7 +53,7 @@ import React, {useState} from "react";
 
       {/* List of Provisions*/}
       <div className="p-6">
-        <h1 className="text-2xl font-bold mb-4" >LIST OF ITEMS</h1>
+        <h1 className="text-2xl font-bold mb-4" >LIST OF PROVISIONS</h1>
         <table className="min-w-full table-auto border-collapse border border-gray-300">
             <thead>
                 <tr className="bg-gray-200">
