@@ -2,7 +2,21 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AdminUI from "./components/admin";
 import SupplierUI from "./components/supplier";
 import CashierUI from "./components/cashier";
-import App from "./App"; 
+import SupplierOrders from "./components/supplier/orders";
+import CashierOrders from "./components/cashier/orders";
+import App from "./App";
+
+// Admin components
+import AdminLogin from "./components/admin/AdminLogin";
+import AdminSignUp from "./components/admin/AdminSignUp";
+
+// Supplier components
+import SupplierLogin from "./components/supplier/SupplierLogin";
+import SupplierSignUp from "./components/supplier/SupplierSignUp";
+
+// Cashier components
+import CashierLogin from "./components/cashier/CashierLogin";
+import CashierSignUp from "./components/cashier/CashierSignUp";
 
 function RoutesComponent() {
   return (
@@ -12,6 +26,20 @@ function RoutesComponent() {
         <Route path="/admin" element={<AdminUI />} />
         <Route path="/supplier" element={<SupplierUI />} />
         <Route path="/cashier" element={<CashierUI />} />
+        <Route path="/cashier/orders" element={<CashierOrders />} />
+        <Route path="/supplier/orders" element={<SupplierOrders />} />
+
+        {/* Login and Signup Routes for Admin */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/signup" element={<AdminSignUp />} />
+
+        {/* Login and Signup Routes for Supplier */}
+        <Route path="/supplier/login" element={<SupplierLogin />} />
+        <Route path="/supplier/signup" element={<SupplierSignUp />} />
+
+        {/* Login and Signup Routes for Cashier */}
+        <Route path="/cashier/login" element={<CashierLogin />} />
+        <Route path="/cashier/signup" element={<CashierSignUp />} />
       </Routes>
     </Router>
   );
