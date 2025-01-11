@@ -1,0 +1,32 @@
+[
+  {
+    "weekStart": "30-12-2024",
+    "purchaseTotal": 1000,
+    "salesTotal": 1200,
+    "profit": 200
+  },
+  {
+    "weekStart": "06-01-2025",
+    "purchaseTotal": 1500,
+    "salesTotal": 1800,
+    "profit": 300
+  },
+  {
+    "weekStart": "13-01-2025",
+    "purchaseTotal": 800,
+    "salesTotal": 950,
+    "profit": 150
+  },
+  {
+    "weekStart": "20-01-2025",
+    "purchaseTotal": 1200,
+    "salesTotal": 1300,
+    "profit": 100
+  },
+  {
+    "weekStart": "27-01-2025",
+    "purchaseTotal": 900,
+    "salesTotal": 1100,
+    "profit": 200
+  }
+]

@@ -4,7 +4,9 @@ import SupplierUI from "./components/supplier";
 import CashierUI from "./components/cashier";
 import SupplierOrders from "./components/supplier/orders";
 import CashierOrders from "./components/cashier/orders";
-import App from "./App"; 
+import App from "./App";
+import Provisions from "./components/admin/provisions";
+import ProfitAnalysis from "./components/admin/profitanalysis";
 
 function RoutesComponent() {
   return (
@@ -16,6 +18,9 @@ function RoutesComponent() {
         <Route path="/cashier" element={<CashierUI />} />
         <Route path="/cashier/orders" element={<CashierOrders />} />
         <Route path="/supplier/orders" element={<SupplierOrders />} />
+
+        <Route path="/admin/provisions/view" element={<Provisions />} />
+        <Route path="/admin/profitanalysis" element={<ProfitAnalysis />} />
       </Routes>
     </Router>
   );
