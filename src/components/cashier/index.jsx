@@ -1,12 +1,15 @@
 
+
 import { useNavigate } from "react-router-dom";
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 
 function CashierUI() {
     const navigate = useNavigate();
     return (
       <>
+
         <div className="flex flex-col justify-center items-center min-h-screen bg-gray-100 px-6">
           {/* Upper Section - Welcome and Links */}
           <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg mb-6">
@@ -28,6 +31,7 @@ function CashierUI() {
             </button>
           </div>
         </div>
+
       </>
     );
 }

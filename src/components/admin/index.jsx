@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -10,6 +11,7 @@ function AdminUI() {
       <div className="flex space-x-4">
         <Link to="/admin/login" className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">Login</Link>
         <Link to="/admin/signup" className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600">Sign Up</Link>
+
       </div>
     </div>
   );
