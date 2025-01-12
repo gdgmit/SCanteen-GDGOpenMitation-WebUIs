@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = ({ role }) => {
+  const sampleUserId = "123"; // Replace with dynamic logic if available
   const [openDropdown, setOpenDropdown] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Tracks login state
   const [showAlert, setShowAlert] = useState(false); // Tracks alert modal visibility
@@ -11,7 +12,7 @@ const Navbar = ({ role }) => {
   // Define navigation items
   const navItems = {
     admin: [
-      { path: "/admin/dashboard/:u_id", label: "Dashboard" },
+      { path: `/admin/dashboard/${sampleUserId}`, label: "Dashboard" },
       {
         label: "Provisions",
         subItems: [
@@ -19,17 +20,17 @@ const Navbar = ({ role }) => {
           { path: "/admin/provisions/view", label: "View Provision" },
         ],
       },
-      { path: "/admin/profit-analysis", label: "Profit Analysis" },
+      { path: "/admin/profitanalysis", label: "Profit Analysis" },
       { path: "/logout", label: "Logout" },
     ],
     cashier: [
-      { path: "/cashier/dashboard/:u_id", label: "Dashboard" },
+      { path: `/cashier/dashboard/${sampleUserId}`, label: "Dashboard" },
       { path: "/cashier/orders", label: "Orders List" },
       { path: "/cashier/menu-adder", label: "Menu Adder" },
       { path: "/logout", label: "Logout" },
     ],
     supplier: [
-      { path: "/supplier/dashboard/:u_id", label: "Dashboard" },
+      { path: `/supplier/dashboard/${sampleUserId}`, label: "Dashboard" },
       { path: "/supplier/orders", label: "Orders List" },
       { path: "/supplier/menu-adder", label: "Menu Adder" },
       { path: "/logout", label: "Logout" },
