@@ -7,16 +7,16 @@ import CashierOrders from "./components/cashier/orders";
 import App from "./App";
 
 // Admin components
-import AdminLogin from "./components/admin/AdminLogin";
-import AdminSignUp from "./components/admin/AdminSignUp";
+import AdminLogin from "./components/admin/LoginPages/AdminLogin";
+import AdminSignUp from "./components/admin/LoginPages/AdminSignUp";
 
 // Supplier components
-import SupplierLogin from "./components/supplier/SupplierLogin";
-import SupplierSignUp from "./components/supplier/SupplierSignUp";
+import SupplierLogin from "./components/supplier/LoginPages/SupplierLogin";
+import SupplierSignUp from "./components/supplier/LoginPages/SupplierSignUp";
 
 // Cashier components
-import CashierLogin from "./components/cashier/CashierLogin";
-import CashierSignUp from "./components/cashier/CashierSignUp";
+import CashierLogin from "./components/cashier/LoginPages/CashierLogin";
+import CashierSignUp from "./components/cashier/LoginPages/CashierSignUp";
 
 function RoutesComponent() {
   return (
