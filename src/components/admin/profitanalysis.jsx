@@ -2,6 +2,12 @@ import { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import dayjs from "dayjs";
+import isoWeek from "dayjs/plugin/isoWeek";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+
+dayjs.extend(customParseFormat);
+dayjs.extend(isoWeek);
+
 
 const ProfitAnalysis = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());

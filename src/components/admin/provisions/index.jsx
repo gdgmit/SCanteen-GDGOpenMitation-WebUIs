@@ -4,8 +4,10 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import { useNavigate } from "react-router-dom";
+import isoWeek from "dayjs/plugin/isoWeek";
 
 dayjs.extend(customParseFormat);
+dayjs.extend(isoWeek);
 
 const Provisions = () => {
   const [provisions, setProvisions] = useState([]);
@@ -33,15 +35,15 @@ const Provisions = () => {
     const filteredData = provisions.filter((provision) => {
       return (
         dayjs(provision.provPurchaseDate, "DD-MM-YYYY hh:mm:ss A").format(
-          "YYYY-MM-DD"
-        ) === selectedDate
+          "DD-MM-YYYY"
+        ) === dayjs(selectedDate).format("DD-MM-YYYY")
       );
     });
     setFilteredProvisions(filteredData);
   }, [selectedDate, provisions]);
 
-  const handleDateChange = (e) => {
-    setSelectedDate(e.target.value);
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
   };
 
   const totalAmount = filteredProvisions.reduce(
