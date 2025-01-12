@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .navbar-hover {
+    @apply hover:text-customBlue hover:border-b-4 hover:border-b-customBlue hover:border-l-2 hover:border-l-gray-400 hover:border-r-2 hover:border-r-gray-400;
+  }
+}

@@ -1,0 +1,215 @@
+[
+  {
+    "order_ID": 1234,
+    "order_date": "17-11-2024 05.25:00 PM",
+    "order_status": "ordered",
+    "isScanned": true,
+    "payment_mode": "cash",
+    "payment_status": "paid",
+    "total_amount": 100,
+    "items": [
+      {
+        "item_id": 56,
+        "name": "Dosa",
+        "quantity": 2,
+        "price": 30
+      },
+      {
+        "item_id": 46,
+        "name": "Idli",
+        "quantity": 7,
+        "price": 60
+      }
+    ]
+  },
+  {
+    "order_ID": 1432,
+    "order_date": "16-11-2024 01.20:00 PM",
+    "order_status": "ordered",
+    "isScanned": true,
+    "payment_mode": "cash",
+    "payment_status": "not paid",
+    "total_amount": 20,
+    "items": [
+      {
+        "item_id": 36,
+        "name": "Vada",
+        "quantity": 2,
+        "price": 20
+      }
+    ]
+  },
+  {
+    "order_ID": 5678,
+    "order_date": "15-11-2024 10.45:00 AM",
+    "order_status": "ordered",
+    "payment_mode": "online",
+    "payment_status": "paid",
+    "isScanned": true,
+    "total_amount": 150,
+    "items": [
+      {
+        "item_id": 12,
+        "name": "Pongal",
+        "quantity": 3,
+        "price": 50
+      },
+      {
+        "item_id": 78,
+        "name": "Sambar",
+        "quantity": 2,
+        "price": 25
+      }
+    ]
+  },
+  {
+    "order_ID": 7890,
+    "order_date": "14-11-2024 09.30:00 AM",
+    "order_status": "ordered",
+    "payment_mode": "cash",
+    "payment_status": "not paid",
+    "isScanned": false,
+    "total_amount": 60,
+    "items": [
+      {
+        "item_id": 22,
+        "name": "Masala Dosa",
+        "quantity": 1,
+        "price": 40
+      },
+      {
+        "item_id": 33,
+        "name": "Tea",
+        "quantity": 2,
+        "price": 10
+      }
+    ]
+  },
+  {
+    "order_ID": 5671,
+    "order_date": "13-11-2024 11.00:00 AM",
+    "order_status": "ordered",
+    "isScanned": false,
+    "payment_mode": "cash",
+    "payment_status": "paid",
+    "total_amount": 180,
+    "items": [
+      {
+        "item_id": 92,
+        "name": "Upma",
+        "quantity": 4,
+        "price": 40
+      },
+      {
+        "item_id": 63,
+        "name": "Vada",
+        "quantity": 3,
+        "price": 30
+      },
+      {
+        "item_id": 29,
+        "name": "Coconut Chutney",
+        "quantity": 2,
+        "price": 10
+      }
+    ]
+  },
+  {
+    "order_ID": 8743,
+    "order_date": "12-11-2024 12.10:00 PM",
+    "order_status": "ordered",
+    "isScanned": true,
+    "payment_mode": "online",
+    "payment_status": "not paid",
+    "total_amount": 120,
+    "items": [
+      {
+        "item_id": 56,
+        "name": "Dosa",
+        "quantity": 3,
+        "price": 30
+      },
+      {
+        "item_id": 13,
+        "name": "Idli",
+        "quantity": 4,
+        "price": 20
+      },
+      {
+        "item_id": 48,
+        "name": "Sambar",
+        "quantity": 2,
+        "price": 10
+      }
+    ]
+  },
+  {
+    "order_ID": 9876,
+    "order_date": "11-11-2024 03.50:00 PM",
+    "order_status": "ordered",
+    "isScanned": false,
+    "payment_mode": "cash",
+    "payment_status": "paid",
+    "total_amount": 50,
+    "items": [
+      {
+        "item_id": 92,
+        "name": "Upma",
+        "quantity": 2,
+        "price": 40
+      },
+      {
+        "item_id": 11,
+        "name": "Tea",
+        "quantity": 1,
+        "price": 10
+      }
+    ]
+  },
+  {
+    "order_ID": 7634,
+    "order_date": "10-11-2024 02.30:00 PM",
+    "order_status": "ordered",
+    "isScanned": false,
+    "payment_mode": "online",
+    "payment_status": "not paid",
+    "total_amount": 90,
+    "items": [
+      {
+        "item_id": 37,
+        "name": "Vada",
+        "quantity": 4,
+        "price": 20
+      },
+      {
+        "item_id": 68,
+        "name": "Sambar",
+        "quantity": 3,
+        "price": 10
+      }
+    ]
+  },
+  {
+    "order_ID": 6543,
+    "order_date": "09-11-2024 08.15:00 PM",
+    "order_status": "ordered",
+    "isScanned": true,
+    "payment_mode": "cash",
+    "payment_status": "paid",
+    "total_amount": 75,
+    "items": [
+      {
+        "item_id": 19,
+        "name": "Masala Dosa",
+        "quantity": 1,
+        "price": 40
+      },
+      {
+        "item_id": 50,
+        "name": "Tea",
+        "quantity": 2,
+        "price": 15
+      }
+    ]
+  }
+]
