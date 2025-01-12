@@ -9,6 +9,8 @@ import SupplierOrders from "./components/supplier/orders";
 import CashierOrders from "./components/cashier/orders";
 import App from "./App"; 
 import Navbar from "./components/Navbar";
+import Provisions from "./components/admin/provisions";
+import ProfitAnalysis from "./components/admin/profitanalysis";
 
 function RoutesComponent() {
   return (
@@ -21,10 +23,13 @@ function RoutesComponent() {
         <Route path="/cashier/orders" element={<CashierOrders />} />
         <Route path="/supplier/orders" element={<SupplierOrders />} />
 
-        {/* Dashboard pages with Navbar */}
         <Route path="/admin/dashboard/:u_id" element={<><Navbar /><AdminDashBoard /></>} />
         <Route path="/cashier/dashboard/:u_id" element={<><Navbar /><CashierDashBoard /></>} />
         <Route path="/supplier/dashboard/:u_id" element={<><Navbar /><SupplierDashBoard /></>} />
+
+        <Route path="/admin/provisions/view" element={<Provisions />} />
+        <Route path="/admin/profitanalysis" element={<ProfitAnalysis />} />
+
       </Routes>
     </Router>
   );
