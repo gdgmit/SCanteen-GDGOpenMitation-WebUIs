@@ -5,11 +5,33 @@ function CashierLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false); // To toggle password visibility
+  const [errorMessage, setErrorMessage] = useState(""); // To store validation errors
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Input validation
+    if (!email) {
+      setErrorMessage("Email is required.");
+      return;
+    }
+    if (!password) {
+      setErrorMessage("Password is required.");
+      return;
+    }
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      setErrorMessage("Invalid email format.");
+      return;
+    }
+
+    // Reset error message and log the user in
+    setErrorMessage("");
     console.log("Cashier Login:", { email, password });
     alert("Cashier Logged In");
+
+    // Clear input fields
+    setEmail("");
+    setPassword("");
   };
 
   return (
@@ -43,6 +65,9 @@ function CashierLogin() {
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </span>
           </div>
+          {errorMessage && (
+            <div className="mb-4 text-red-500 text-sm">{errorMessage}</div>
+          )}
           <button
             type="submit"
             className="bg-blue-500 text-white font-bold w-full py-2 rounded hover:bg-blue-600 transition duration-200"
