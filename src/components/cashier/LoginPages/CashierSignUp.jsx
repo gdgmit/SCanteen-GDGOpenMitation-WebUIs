@@ -17,6 +17,16 @@ function CashierSignUp() {
     const numberPattern = /\d/;
     const specialCharPattern = /[!@#$%^&*(),.?":{}|<>]/;
 
+    if (!email) {
+      setError("Email is required");
+      return;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      setError("Invalid email format.");
+      return;
+    }
+
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
       return;
@@ -45,6 +55,9 @@ function CashierSignUp() {
     setError("");
     alert("Cashier Sign Up Successful");
     console.log("Cashier Sign Up:", { email, password });
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
   };
 
   return (

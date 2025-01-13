@@ -17,6 +17,16 @@ function SupplierSignUp() {
     const numberPattern = /\d/;
     const specialCharPattern = /[!@#$%^&*(),.?":{}|<>]/;
 
+    if (!email) {
+      setError("Email is required");
+      return;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      setError("Invalid email format.");
+      return;
+    }
+
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
       return;
@@ -45,6 +55,9 @@ function SupplierSignUp() {
     setError("");
     alert("Supplier Sign Up Successful");
     console.log("Supplier Sign Up:", { email, password });
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
   };
 
   return (
