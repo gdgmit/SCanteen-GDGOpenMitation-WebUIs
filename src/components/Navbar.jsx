@@ -20,19 +20,20 @@ const Navbar = ({ role }) => {
           { path: "/admin/provisions/view", label: "View Provision" },
         ],
       },
+      {path: "/admin/new_product", label: "Product Adder"},
       { path: "/admin/profitanalysis", label: "Profit Analysis" },
       { path: "/logout", label: "Logout" },
     ],
     cashier: [
       { path: `/cashier/dashboard/${sampleUserId}`, label: "Dashboard" },
       { path: "/cashier/orders", label: "Orders List" },
-      { path: "/cashier/menu-adder", label: "Menu Adder" },
+      { path: "/cashier/menu", label: "Menu Adder" },
       { path: "/logout", label: "Logout" },
     ],
     supplier: [
       { path: `/supplier/dashboard/${sampleUserId}`, label: "Dashboard" },
       { path: "/supplier/orders", label: "Orders List" },
-      { path: "/supplier/menu-adder", label: "Menu Adder" },
+      { path: "/supplier/menu", label: "Menu Adder" },
       { path: "/logout", label: "Logout" },
     ],
   };

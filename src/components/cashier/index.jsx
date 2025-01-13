@@ -1,9 +1,12 @@
 
+
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 function CashierUI() {
+
   const navigate = useNavigate();
   return (
     <>
@@ -20,6 +23,7 @@ function CashierUI() {
             <Link
               to="/cashier/login"
               className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600"
+
             >
               Login
             </Link>
@@ -32,18 +36,10 @@ function CashierUI() {
           </div>
         </div>
 
-        {/* Orders Button Section
-        <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
-          <button
-            className="bg-blue-500 text-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:bg-blue-400 transition-all w-full text-center"
-            onClick={() => navigate("orders")}
-          >
-            Orders
-          </button>
-        </div> */}
-      </div>
-    </>
-  );
+
+      </>
+    );
+
 }
 
 export default CashierUI;
