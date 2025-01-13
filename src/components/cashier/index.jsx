@@ -1,13 +1,10 @@
-
-
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 function CashierUI() {
-
   const navigate = useNavigate();
+
   return (
     <>
       <div className="flex flex-col justify-center items-center min-h-screen bg-gray-100 px-6">
@@ -23,7 +20,6 @@ function CashierUI() {
             <Link
               to="/cashier/login"
               className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600"
-
             >
               Login
             </Link>
@@ -35,12 +31,9 @@ function CashierUI() {
             </Link>
           </div>
         </div>
-
-
-      </>
-    );
-
+      </div>
+    </>
+  );
 }
 
 export default CashierUI;
-
