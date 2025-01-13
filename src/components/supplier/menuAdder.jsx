@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const MenuAdderCashier = () => {
+export const MenuAdderSupplier = () => {
   const [Items, setItems] = useState([
     { id: 1, name: "Dosa", quantity: 10, Price: 50, date: new Date().toLocaleDateString() },
     { id: 2, name: "Idly", quantity: 5, Price: 20, date: new Date().toLocaleDateString() },

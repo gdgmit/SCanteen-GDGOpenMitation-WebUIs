@@ -25,6 +25,11 @@ import CashierSignUp from "./components/cashier/LoginPages/CashierSignUp";
 import Navbar from "./components/Navbar";
 import Provisions from "./components/admin/provisions";
 import ProfitAnalysis from "./components/admin/profitanalysis";
+import { ProvisionsPage } from "./components/admin/provisions/ProvisionPage";
+import { ProductManager } from "./components/admin/ProductAdder";
+import { MenuAdderCashier} from "./components/cashier/menuAdder";
+import { MenuAdderSupplier } from "./components/supplier/menuAdder";
+
 
 
 function RoutesComponent() {
@@ -54,9 +59,12 @@ function RoutesComponent() {
         <Route path="/admin/dashboard/:u_id" element={<><Navbar /><AdminDashBoard /></>} />
         <Route path="/cashier/dashboard/:u_id" element={<><Navbar /><CashierDashBoard /></>} />
         <Route path="/supplier/dashboard/:u_id" element={<><Navbar /><SupplierDashBoard /></>} />
-
+        <Route path="/admin/provisions/new" element={<ProvisionsPage />} />
         <Route path="/admin/provisions/view" element={<Provisions />} />
         <Route path="/admin/profitanalysis" element={<ProfitAnalysis />} />
+        <Route path="admin/new_product" element ={<ProductManager />} />
+        <Route path= "/cashier/menu" element ={<MenuAdderCashier />}/>
+        <Route path="/supplier/menu" element={<MenuAdderSupplier />} />
 
       </Routes>
     </Router>

@@ -41,8 +41,13 @@ export const ProductManager = () => {
     setEditPrice("");
   };
 
+  const deleteProduct = (index) => {
+    const updatedProducts = products.filter((_, i) => i !== index);
+    setProducts(updatedProducts);
+  };
+
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-gray-100 rounded-lg shadow-md">
+    <div className="m-12">
       <h2 className="text-2xl font-bold text-center mb-6">Product Manager</h2>
 
       {/* Add New Product */}
@@ -88,35 +93,45 @@ export const ProductManager = () => {
                   <span className="font-medium text-gray-700">{product.name}</span> -{" "}
                   <span className="text-gray-600">₹{product.price.toFixed(2)}</span>
                 </div>
-                {editProductIndex === index ? (
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="number"
-                      value={editPrice}
-                      onChange={(e) => setEditPrice(e.target.value)}
-                      className="px-3 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                    <button
-                      onClick={saveEdit}
-                      className="px-3 py-1 bg-green-500 text-white rounded-md hover:bg-green-600"
-                    >
-                      Save
-                    </button>
-                    <button
-                      onClick={cancelEdit}
-                      className="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600"
-                    >
-                      Cancel
-                    </button>
-                  </div>
-                ) : (
-                  <button
-                    onClick={() => startEditing(index)}
-                    className="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600"
-                  >
-                    Edit
-                  </button>
-                )}
+                <div className="flex items-center gap-2">
+                  {editProductIndex === index ? (
+                    <>
+                      <input
+                        type="number"
+                        value={editPrice}
+                        onChange={(e) => setEditPrice(e.target.value)}
+                        className="px-3 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      />
+                      <button
+                        onClick={saveEdit}
+                        className="px-3 py-1 bg-green-500 text-white rounded-md hover:bg-green-600"
+                      >
+                        Save
+                      </button>
+                      <button
+                        onClick={cancelEdit}
+                        className="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600"
+                      >
+                        Cancel
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <button
+                        onClick={() => startEditing(index)}
+                        className="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+                      >
+                        Edit
+                      </button>
+                      <button
+                        onClick={() => deleteProduct(index)}
+                        className="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600"
+                      >
+                        Delete
+                      </button>
+                    </>
+                  )}
+                </div>
               </li>
             ))}
           </ul>
