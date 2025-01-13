@@ -1,0 +1,79 @@
+[
+  {
+    "provId": 89,
+    "provName": "Carrot",
+    "provQuantity": 5,
+    "provPrice": 100,
+    "provPurchaseDate": "10-01-2025 02:15:00 PM"
+  },
+  {
+    "provId": 90,
+    "provName": "Onion",
+    "provQuantity": 15,
+    "provPrice": 70,
+    "provPurchaseDate": "11-01-2025 05:25:00 PM"
+  },
+  {
+    "provId": 91,
+    "provName": "Tomato",
+    "provQuantity": 5,
+    "provPrice": 50,
+    "provPurchaseDate": "11-01-2025 08:30:00 AM"
+  },
+  {
+    "provId": 92,
+    "provName": "Potato",
+    "provQuantity": 20,
+    "provPrice": 40,
+    "provPurchaseDate": "11-01-2025 11:20:00 AM"
+  },
+  {
+    "provId": 93,
+    "provName": "Spinach",
+    "provQuantity": 30,
+    "provPrice": 20,
+    "provPurchaseDate": "11-01-2025 03:05:00 PM"
+  },
+  {
+    "provId": 94,
+    "provName": "Garlic",
+    "provQuantity": 10,
+    "provPrice": 150,
+    "provPurchaseDate": "12-01-2025 04:45:00 PM"
+  },
+  {
+    "provId": 95,
+    "provName": "Cucumber",
+    "provQuantity": 12,
+    "provPrice": 60,
+    "provPurchaseDate": "13-01-2025 01:10:00 PM"
+  },
+  {
+    "provId": 96,
+    "provName": "Chili",
+    "provQuantity": 8,
+    "provPrice": 80,
+    "provPurchaseDate": "13-01-2025 10:00:00 AM"
+  },
+  {
+    "provId": 89,
+    "provName": "Carrot",
+    "provQuantity": 5,
+    "provPrice": 100,
+    "provPurchaseDate": "17-11-2024 05.25:00 PM"
+  },
+  {
+    "provId": 90,
+    "provName": "Onion",
+    "provQuantity": 15,
+    "provPrice": 70,
+    "provPurchaseDate": "16-11-2024 05.25:00 PM"
+  },
+  {
+    "provId": 89,
+    "provName": "Tomato",
+    "provQuantity": 5,
+    "provPrice": 50,
+    "provPurchaseDate": "15-11-2024 05.25:00 PM"
+  }
+]
