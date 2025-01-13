@@ -17,6 +17,16 @@ function AdminSignUp() {
     const numberPattern = /\d/;
     const specialCharPattern = /[!@#$%^&*(),.?":{}|<>]/;
 
+    if (!email) {
+      setError("Email is required");
+      return;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      setError("Invalid email format.");
+      return;
+    }
+
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
       return;
@@ -45,6 +55,9 @@ function AdminSignUp() {
     setError("");
     alert("Admin Sign Up Successful");
     console.log("Admin Sign Up:", { email, password });
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
   };
 
   return (
