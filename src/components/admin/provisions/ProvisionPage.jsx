@@ -138,10 +138,10 @@ export const ProvisionsPage = () => {
                   {provision.quantity}
                 </td>
                 <td className="border border-gray-300 px-4 py-2">
-                  {provision.purchasePrice}
+                 ₹{provision.purchasePrice}
                 </td>
                 <td className="border border-gray-300 px-4 py-2">
-                  {provision.quantity * provision.purchasePrice}
+                  ₹{provision.quantity * provision.purchasePrice}
                 </td>
               </tr>
             ))}
