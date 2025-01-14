@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Navbar from "../../Navbar";
 
 export const ProvisionsPage = () => {
   const [provisions, setProvisions] = useState([
@@ -89,9 +90,15 @@ export const ProvisionsPage = () => {
     );
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+     <div className="p-6 bg-gray-100 min-h-screen">
+      
+      {/* Navbar */}
+      <div className="sticky top-0 z-20 shadow-md">
+        <Navbar role="admin" />
+      </div>
+
       {/* Date Display */}
-      <div className="mb-4 text-gray-600">Date: {currentDate}</div>
+      <div className="my-4 text-gray-600">Date: {currentDate}</div>
 
       {/* List of Provisions */}
       <div className="p-6">

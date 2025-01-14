@@ -56,9 +56,9 @@ function RoutesComponent() {
         <Route path="/cashier/login" element={<CashierLogin />} />
         <Route path="/cashier/signup" element={<CashierSignUp />} />
 
-        <Route path="/admin/dashboard/:u_id" element={<><Navbar /><AdminDashBoard /></>} />
-        <Route path="/cashier/dashboard/:u_id" element={<><Navbar /><CashierDashBoard /></>} />
-        <Route path="/supplier/dashboard/:u_id" element={<><Navbar /><SupplierDashBoard /></>} />
+        <Route path="/admin/dashboard/:u_id" element={<AdminDashBoard />} />
+        <Route path="/cashier/dashboard/:u_id" element={<CashierDashBoard />} />
+        <Route path="/supplier/dashboard/:u_id" element={<SupplierDashBoard />} />
         <Route path="/admin/provisions/new" element={<ProvisionsPage />} />
         <Route path="/admin/provisions/view" element={<Provisions />} />
         <Route path="/admin/profitanalysis" element={<ProfitAnalysis />} />

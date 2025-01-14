@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
+import Navbar from "../../Navbar";
 
 dayjs.extend(customParseFormat);
 
@@ -30,7 +31,13 @@ const CashierOrders = () => {
 
   return (
     <div className="p-4 w-full mx-auto bg-[#D9D9D96B] min-h-[100vh]">
-      <h1 className="text-2xl font-bold mb-4 text-center">Current Orders</h1>
+      {/*--------------------------common part repeated in many pages------------------------*/}
+      {/* Navbar */}
+      <div className="sticky top-0 z-20 shadow-md">
+          <Navbar role="cashier" />
+        </div>
+      {/*-------------------------------------------------------------*/}
+      <h1 className="text-2xl font-bold my-4 text-center">Current Orders</h1>
 
       {/* Orders List */}
       <div className="transition-all h-full">

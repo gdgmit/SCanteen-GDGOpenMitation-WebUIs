@@ -20,7 +20,7 @@ const CashierDashBoard = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
-    const [headingText, setHeadingText] = useState("Welcome to Admin Dashboard");
+    const [headingText, setHeadingText] = useState("Cashier Dashboard");
 
      // Sample data (this would typically come from an API or database)
      const sampleProfiles = {
@@ -37,7 +37,7 @@ const CashierDashBoard = () => {
             regno: u_id,
             phone: sampleProfiles[u_id].phone
           });
-          setHeadingText("Welcome to Cashier Dashboard");
+          setHeadingText("Cashier Dashboard");
         } else {
           setProfile({
             name: "----",
@@ -113,19 +113,19 @@ const CashierDashBoard = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Fixed Header */}
-      <header className="bg-gray-200 w-full py-3 text-center text-2xl font-bold fixed top-0 z-10">
+      <header className="bg-gray-200 w-full py-3 text-center text-2xl font-bold z-10">
         SCanteen
       </header>
-
+      {/*--------------------------common part repeated in many pages------------------------*/}
       {/* Navbar */}
-      <div>
-        <Navbar role="cashier" />
+      <div className="sticky top-0 z-20 shadow-md">
+          <Navbar role="cashier" />
       </div>
-
+      {/*-------------------------------------------------------------*/}
       {/* Main/page Content */}
-      <div className="pt-32 px-6 flex justify-center">
+      <div className="px-6 flex justify-center">
         <div className="max-w-3xl w-full">
-          <h2 className="text-xl font-semibold mb-5 text-customBlue text-center">{headingText}</h2>
+          <h2 className="text-xl font-semibold my-3 text-customBlue text-center">{headingText}</h2>
 
           {/* Profile Details Section */}
           <div className="bg-white p-6 rounded-lg shadow-md mb-6">
@@ -135,11 +135,11 @@ const CashierDashBoard = () => {
               <div className="flex justify-between">
                 <div className="w-1/2 pr-2">
                   <label className="font-medium">Name:</label>
-                  <div className="mt-1 px-3 py-1 bg-gray-100 rounded">{profile.name}</div>
+                  <div className=" px-3 py-1 bg-gray-100 rounded">{profile.name}</div>
                 </div>
                 <div className="w-1/2 pl-2">
                   <label className="font-medium">Reg Number:</label>
-                  <div className="mt-1 px-3 py-1 bg-gray-100 rounded">{profile.regno}</div>
+                  <div className=" px-3 py-1 bg-gray-100 rounded">{profile.regno}</div>
                 </div>
               </div>
 
@@ -147,11 +147,11 @@ const CashierDashBoard = () => {
               <div className="flex justify-between">
                 <div className="w-1/2 pr-2">
                   <label className="font-medium">Email:</label>
-                  <div className="mt-1 px-3 py-1 bg-gray-100 rounded">{profile.email}</div>
+                  <div className=" px-3 py-1 bg-gray-100 rounded">{profile.email}</div>
                 </div>
                 <div className="w-1/2 pl-2">
                   <label className="font-medium">Phone Number:</label>
-                  <div className="mt-1 px-3 py-1 bg-gray-100 rounded">{profile.phone}</div>
+                  <div className=" px-3 py-1 bg-gray-100 rounded">{profile.phone}</div>
                 </div>
               </div>
             </div>
