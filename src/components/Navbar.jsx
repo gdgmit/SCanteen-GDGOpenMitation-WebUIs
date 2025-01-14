@@ -20,6 +20,7 @@ const Navbar = ({ role }) => {
           { path: "/admin/provisions/view", label: "View Provision" },
         ],
       },
+      {path: "/admin/new_product", label: "Product Adder"},
       { path: "/admin/profitanalysis", label: "Profit Analysis" },
       { path: "/logout", label: "Logout" },
     ],
