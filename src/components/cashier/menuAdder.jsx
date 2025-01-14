@@ -16,7 +16,15 @@ export const MenuAdderCashier = () => {
   const [editingItemId, setEditingItemId] = useState(null);
   const [editedPrice, setEditedPrice] = useState("");
 
-  const currentDate = new Date().toLocaleDateString();
+ const currentDate = formatDate(new Date());
+
+  // Helper function to format the date to dd/mm/yyyy
+  function formatDate(date) {
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0"); // Month is 0-based
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  }
 
   const handleAddItem = (e) => {
     e.preventDefault();
@@ -104,13 +112,16 @@ export const MenuAdderCashier = () => {
           <tbody>
             {Items.map((Item) => (
               <tr key={Item.id} className="hover:bg-gray-100">
-                <td className="border border-gray-300 px-4 py-2">
-                  <input
-                    type="checkbox"
-                    checked={selectedItems.includes(Item.id)}
-                    onChange={() => handleSelectItem(Item.id)}
-                  />
-                </td>
+                <td className="border border-gray-300 px-4 py-2 text-center">
+  <div className="flex justify-center items-center">
+    <input
+      type="checkbox"
+      checked={selectedItems.includes(Item.id)}
+      onChange={() => handleSelectItem(Item.id)}
+    />
+  </div>
+</td>
+
                 <td className="border border-gray-300 px-4 py-2">{Item.name}</td>
                 <td className="border border-gray-300 px-4 py-2">{Item.quantity}</td>
                 <td className="border border-gray-300 px-4 py-2">
@@ -137,7 +148,7 @@ export const MenuAdderCashier = () => {
                     </div>
                   ) : (
                     <div className="flex justify-between items-center">
-                      <span>{Item.Price} ₹</span>
+                      <span>₹{Item.Price} </span>
                       <button
                         onClick={() => handleEditPrice(Item.id)}
                         className="ml-2 text-blue-500 hover:text-blue-700"

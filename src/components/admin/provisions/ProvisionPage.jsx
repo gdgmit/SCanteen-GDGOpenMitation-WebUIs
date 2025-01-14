@@ -2,8 +2,20 @@ import React, { useState } from "react";
 
 export const ProvisionsPage = () => {
   const [provisions, setProvisions] = useState([
-    { id: 1, name: "Rice", quantity: 10, purchasePrice: 500, date: new Date().toLocaleDateString() },
-    { id: 2, name: "Wheat", quantity: 5, purchasePrice: 200, date: new Date().toLocaleDateString() },
+    {
+      id: 1,
+      name: "Rice",
+      quantity: 10,
+      purchasePrice: 500,
+      date: new Date().toLocaleDateString(),
+    },
+    {
+      id: 2,
+      name: "Wheat",
+      quantity: 5,
+      purchasePrice: 200,
+      date: new Date().toLocaleDateString(),
+    },
   ]);
 
   const [formVisible, setFormVisible] = useState(false);
@@ -15,7 +27,15 @@ export const ProvisionsPage = () => {
 
   const [selectedProvisions, setSelectedProvisions] = useState([]);
 
-  const currentDate = new Date().toLocaleDateString();
+  const currentDate = formatDate(new Date());
+
+  // Helper function to format the date to dd/mm/yyyy
+  function formatDate(date) {
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0"); // Month is 0-based
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  }
 
   const handleAddProvision = (e) => {
     e.preventDefault();
@@ -54,6 +74,14 @@ export const ProvisionsPage = () => {
     );
   };
 
+  const handleSelectAll = (e) => {
+    if (e.target.checked) {
+      setSelectedProvisions(provisions.map((provision) => provision.id));
+    } else {
+      setSelectedProvisions([]);
+    }
+  };
+
   const calculateFinalTotal = () =>
     provisions.reduce(
       (total, provision) => total + provision.quantity * provision.purchasePrice,
@@ -71,28 +99,49 @@ export const ProvisionsPage = () => {
         <table className="min-w-full table-auto border-collapse border border-gray-300">
           <thead>
             <tr className="bg-gray-200">
+              <th className="border border-gray-300 px-4 py-2 text-center">
+                <input
+                  type="checkbox"
+                  onChange={handleSelectAll}
+                  checked={
+                    selectedProvisions.length === provisions.length &&
+                    provisions.length > 0
+                  }
+                />
+              </th>
               <th className="border border-gray-300 px-4 py-2 text-left">Name</th>
-              <th className="border border-gray-300 px-4 py-2 text-left">Quantity</th>
-              <th className="border border-gray-300 px-4 py-2 text-left">Purchase Price</th>
-              <th className="border border-gray-300 px-4 py-2 text-left">Total Amount</th>
-              <th className="border border-gray-300 px-4 py-2 text-left">Select</th>
+              <th className="border border-gray-300 px-4 py-2 text-left">
+                Quantity
+              </th>
+              <th className="border border-gray-300 px-4 py-2 text-left">
+                Purchase Price
+              </th>
+              <th className="border border-gray-300 px-4 py-2 text-left">
+                Total Amount
+              </th>
             </tr>
           </thead>
           <tbody>
             {provisions.map((provision) => (
               <tr key={provision.id} className="hover:bg-gray-100">
-                <td className="border border-gray-300 px-4 py-2">{provision.name}</td>
-                <td className="border border-gray-300 px-4 py-2">{provision.quantity}</td>
-                <td className="border border-gray-300 px-4 py-2">{provision.purchasePrice}</td>
-                <td className="border border-gray-300 px-4 py-2">
-                  {provision.quantity * provision.purchasePrice}
-                </td>
                 <td className="border border-gray-300 px-4 py-2 text-center">
                   <input
                     type="checkbox"
                     checked={selectedProvisions.includes(provision.id)}
                     onChange={() => toggleProvisionSelection(provision.id)}
                   />
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  {provision.name}
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  {provision.quantity}
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  {provision.purchasePrice}
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  {provision.quantity * provision.purchasePrice}
                 </td>
               </tr>
             ))}
@@ -101,7 +150,7 @@ export const ProvisionsPage = () => {
 
         {/* Final Total Amount */}
         <div className="mt-4 text-xl font-semibold">
-           Total Amount: ₹{calculateFinalTotal()}
+          Total Amount: ₹{calculateFinalTotal()}
         </div>
       </div>
 
