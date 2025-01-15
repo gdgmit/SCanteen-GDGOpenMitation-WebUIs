@@ -20,7 +20,7 @@ const SupplierDashBoard = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
-    const [headingText, setHeadingText] = useState("Welcome to Admin Dashboard");
+    const [headingText, setHeadingText] = useState("Supplier Dashboard");
 
      // Sample data (this would typically come from an API or database)
      const sampleProfiles = {
@@ -37,7 +37,7 @@ const SupplierDashBoard = () => {
             regno: u_id,
             phone: sampleProfiles[u_id].phone
           });
-          setHeadingText("Welcome to Supplier Dashboard");
+          setHeadingText("Supplier Dashboard");
         } else {
           setProfile({
             name: "----",
@@ -113,19 +113,19 @@ const SupplierDashBoard = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Fixed Header */}
-      <header className="bg-gray-200 w-full py-3 text-center text-2xl font-bold fixed top-0 z-10">
+      <header className="bg-gray-200 w-full py-3 text-center text-2xl font-bold z-10">
         SCanteen
       </header>
 
       {/* Navbar */}
-      <div>
-        <Navbar role="supplier" />
+      <div className="sticky top-0 z-20 shadow-md">
+          <Navbar role="supplier" />
       </div>
 
       {/* Main/page Content */}
-      <div className="pt-32 px-6 flex justify-center">
+      <div className=" px-6 flex justify-center">
         <div className="max-w-3xl w-full">
-          <h2 className="text-xl font-semibold mb-5 text-customBlue text-center">{headingText}</h2>
+          <h2 className="text-xl font-semibold my-3 text-customBlue text-center">{headingText}</h2>
 
           {/* Profile Details Section */}
           <div className="bg-white p-6 rounded-lg shadow-md mb-6">

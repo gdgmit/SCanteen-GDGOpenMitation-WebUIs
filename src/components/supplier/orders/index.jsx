@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
+import Navbar from "../../Navbar";
 
 dayjs.extend(customParseFormat);
 
@@ -28,10 +29,12 @@ const SupplierOrders = () => {
   };
 
   return (
-    <div className="w-full bg-[#D9D9D96B]">
-
+    <div className="w-full mt-2 bg-[#D9D9D96B]">
+      <div className="sticky top-0 z-20 shadow-md">
+          <Navbar role="supplier" />
+      </div>
       {/* Tabs */}
-      <div className="flex justify-center border-b mb-4 bg-[#D9D9D99E] w-full">
+      <div className="flex justify-center border-b my-4 bg-[#D9D9D99E] w-full">
         <button
           className={`px-4 py-2 transition-all  h-16 flex-1 ${
             activeTab === "scanned_orders"

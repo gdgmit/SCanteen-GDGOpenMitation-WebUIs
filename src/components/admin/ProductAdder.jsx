@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Navbar from "../Navbar";
 
 export const ProductManager = () => {
   const [products, setProducts] = useState([
@@ -47,8 +48,11 @@ export const ProductManager = () => {
   };
 
   return (
-    <div className="m-12">
-      <h2 className="text-2xl font-bold text-center mb-6">Product Manager</h2>
+    <div className="mx-20 my-6">
+      <div className="sticky top-0 z-20 shadow-md">
+        <Navbar role="admin" />
+      </div>
+      <h2 className="text-2xl font-bold text-center mt-6 mb-6">Product Manager</h2>
 
       {/* Add New Product */}
       <div className="mb-6">

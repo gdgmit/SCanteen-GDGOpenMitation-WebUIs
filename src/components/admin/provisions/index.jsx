@@ -5,6 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import { useNavigate } from "react-router-dom";
 import isoWeek from "dayjs/plugin/isoWeek";
+import Navbar from "../../Navbar";
 
 dayjs.extend(customParseFormat);
 dayjs.extend(isoWeek);
@@ -53,10 +54,14 @@ const Provisions = () => {
 
   return (
     <div className="p-4 w-full mx-auto bg-white min-h-[100vh]">
-      <h1 className="text-2xl font-bold mb-4 text-center text-[#5777C7]">
+      {/* Navbar */}
+      <div className="sticky top-0 z-20 shadow-md">
+        <Navbar role="admin" />
+      </div>
+      <h1 className="text-2xl font-bold my-4 text-center text-[#5777C7]">
         Provisions
       </h1>
-
+      
       <div className="flex justify-between mb-4">
         <DatePicker
           selected={selectedDate}
@@ -71,7 +76,7 @@ const Provisions = () => {
           Add Provision
         </button>
       </div>
-
+      
       <table className="min-w-full table-auto">
         <thead>
           <tr>

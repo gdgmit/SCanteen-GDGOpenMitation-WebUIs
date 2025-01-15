@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = ({ role }) => {
   const sampleUserId = "123"; // Replace with dynamic logic if available
@@ -8,6 +8,7 @@ const Navbar = ({ role }) => {
   const [showAlert, setShowAlert] = useState(false); // Tracks alert modal visibility
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation(); // Hook to get current location
 
   // Define navigation items
   const navItems = {
@@ -68,15 +69,19 @@ const Navbar = ({ role }) => {
 
   return (
     <>
-      <nav className="bg-customNavbar text-black w-full fixed top-16 z-10">
-        <ul className="flex justify-center space-x-6 p-2 text-black text-lg items-center">
+      <nav className="bg-customNavbar text-black w-full z-10">
+        <ul className="flex flex-wrap justify-center space-x-4 md:space-x-8 lg:space-x-20 p-3 text-black font-medium text-lg md:text-xl items-center">
           {items.map((item, index) => (
             <li key={index} className="relative flex items-center">
               {item.subItems ? (
                 <div ref={dropdownRef}>
                   <button
                     onClick={toggleDropdown}
-                    className="navbar-hover px-4 py-2 rounded focus:outline-none"
+                    className={`navbar-hover px-4 py-2 rounded focus:outline-none ${
+                      item.subItems.some((subItem) => location.pathname.includes(subItem.path))
+                        ? "text-customBlue border-b-2 border-customBlue"
+                        : ""
+                    }`}
                   >
                     {item.label}
                   </button>
@@ -86,7 +91,11 @@ const Navbar = ({ role }) => {
                         <li key={subIndex}>
                           <Link
                             to={subItem.path}
-                            className="navbar-hover block px-4 py-2"
+                            className={`navbar-hover block px-4 py-2 ${
+                              location.pathname === subItem.path
+                                ? "text-customBlue border-b-2 border-customBlue"
+                                : ""
+                            }`}
                             onClick={() => setOpenDropdown(false)}
                           >
                             {subItem.label}
@@ -106,7 +115,9 @@ const Navbar = ({ role }) => {
               ) : (
                 <Link
                   to={item.path}
-                  className="navbar-hover px-4 py-2 rounded"
+                  className={`navbar-hover px-4 py-2 rounded ${
+                    location.pathname === item.path ? "text-customBlue border-b-2 border-customBlue" : ""
+                  }`}
                 >
                   {item.label}
                 </Link>

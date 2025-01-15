@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Navbar from "../Navbar";
 
 export const MenuAdderSupplier = () => {
   const [Items, setItems] = useState([
@@ -111,7 +112,10 @@ export const MenuAdderSupplier = () => {
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
-      <div className="mb-4 text-gray-600">Date: {currentDate}</div>
+      <div className="sticky top-0 z-20 shadow-md">
+          <Navbar role="supplier" />
+      </div>
+      <div className="my-4 text-gray-600">Date: {currentDate}</div>
 
       {/* List of Items */}
       <div className="p-6">
