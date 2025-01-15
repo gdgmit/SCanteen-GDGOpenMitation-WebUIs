@@ -13,10 +13,12 @@ export const MenuAdderSupplier = () => {
     Price: "",
   });
   const [selectedItems, setSelectedItems] = useState([]);
-  const [editingItemId, setEditingItemId] = useState(null);
+  const [editingItemId, setEditingItemId] = useState(null); // For editing price
+  const [editingQuantityItemId, setEditingQuantityItemId] = useState(null); // For editing quantity
   const [editedPrice, setEditedPrice] = useState("");
+  const [editedQuantity, setEditedQuantity] = useState("");
 
-  const currentDate = formatDate(new Date());
+ const currentDate = formatDate(new Date());
 
   // Helper function to format the date to dd/mm/yyyy
   function formatDate(date) {
@@ -82,10 +84,30 @@ export const MenuAdderSupplier = () => {
     setEditedPrice("");
   };
 
+
+  const handleEditQuantity = (id) => {
+    setEditingQuantityItemId(id);
+    const item = Items.find((item) => item.id === id);
+    setEditedQuantity(item.quantity);
+  };
+
+  const handleSaveQuantity = (id) => {
+    setItems(
+      Items.map((item) =>
+        item.id === id ? { ...item, quantity: editedQuantity } : item
+      )
+    );
+    setEditingQuantityItemId(null);
+    setEditedQuantity("");
+  };
+
   const handleCancelEdit = () => {
     setEditingItemId(null);
+    setEditingQuantityItemId(null);
     setEditedPrice("");
+    setEditedQuantity("");
   };
+
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
@@ -112,7 +134,7 @@ export const MenuAdderSupplier = () => {
           <tbody>
             {Items.map((Item) => (
               <tr key={Item.id} className="hover:bg-gray-100">
-               <td className="border border-gray-300 px-4 py-2 text-center">
+                <td className="border border-gray-300 px-4 py-2 text-center">
   <div className="flex justify-center items-center">
     <input
       type="checkbox"
@@ -123,7 +145,37 @@ export const MenuAdderSupplier = () => {
 </td>
 
                 <td className="border border-gray-300 px-4 py-2">{Item.name}</td>
-                <td className="border border-gray-300 px-4 py-2">{Item.quantity}</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  {editingQuantityItemId === Item.id ? (
+                    <div className="flex items-center">
+                      <input
+                        type="number"
+                        value={editedQuantity}
+                        onChange={(e) => setEditedQuantity(e.target.value)}
+                        className="px-3 py-2 border rounded"
+                      />
+                      <button
+                        onClick={() => handleSaveQuantity(Item.id)}
+                        className="ml-2 text-green-500"
+                      >
+                        Save
+                      </button>
+                      <button onClick={handleCancelEdit} className="ml-2 text-red-500">
+                        Cancel
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="flex justify-between items-center">
+                      <span>{Item.quantity}</span>
+                      <button
+                        onClick={() => handleEditQuantity(Item.id)}
+                        className="ml-2 text-blue-500"
+                      >
+                        ✏️
+                      </button>
+                    </div>
+                  )}
+                </td>
                 <td className="border border-gray-300 px-4 py-2">
                   {editingItemId === Item.id ? (
                     <div className="flex items-center">
