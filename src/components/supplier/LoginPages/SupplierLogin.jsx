@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // FontAwesome icons for password visibility toggle
 
 function SupplierLogin() {
@@ -6,6 +7,7 @@ function SupplierLogin() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false); // To toggle password visibility
   const [errorMessage, setErrorMessage] = useState(""); // To store validation errors
+  const navigate = useNavigate(); // Initialize the navigate hook
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,11 +29,9 @@ function SupplierLogin() {
     // Reset error message and log the user in
     setErrorMessage("");
     console.log("Supplier Login:", { email, password });
-    alert("Supplier Logged In");
 
-    // Clear input fields
-    setEmail("");
-    setPassword("");
+    // Redirect to the supplier dashboard page
+    navigate("/supplier/dashboard/123");
   };
 
   return (
