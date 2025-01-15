@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // FontAwesome icons for password visibility toggle
 
 function CashierLogin() {
@@ -6,6 +7,7 @@ function CashierLogin() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false); // To toggle password visibility
   const [errorMessage, setErrorMessage] = useState(""); // To store validation errors
+  const navigate = useNavigate(); // Initialize the navigate hook
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,11 +29,9 @@ function CashierLogin() {
     // Reset error message and log the user in
     setErrorMessage("");
     console.log("Cashier Login:", { email, password });
-    alert("Cashier Logged In");
 
-    // Clear input fields
-    setEmail("");
-    setPassword("");
+    // Redirect to the cashier dashboard page
+    navigate("/cashier/dashboard/123");
   };
 
   return (
